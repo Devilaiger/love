@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LEVEL 19 // Shreya.exe</title>
+  <meta name="theme-color" content="#ffd9e8" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <!-- Three.js + GLTFLoader + OrbitControls -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="assets/GLTFLoader.js"></script>
+  <script src="assets/OrbitControls.js"></script>
+</head>
+<body>
+  <div class="crt"></div>
+  <div id="ambient" aria-hidden="true"></div>
+
+  <div class="birthday-top-ticker">
+    <div class="ticker-track">
+      <span>🎉 HAPPY 19TH BIRTHDAY SHREYA! 🎂 LEVEL 19 UNLOCKED ✨ K-DRAMAS • ANIME VIBES • COZY GAMING • 1-MONTH VIP STREAM PASS GIFT 🎁</span>
+      <span>🎉 HAPPY 19TH BIRTHDAY SHREYA! 🎂 LEVEL 19 UNLOCKED ✨ K-DRAMAS • ANIME VIBES • COZY GAMING • 1-MONTH VIP STREAM PASS GIFT 🎁</span>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <a class="logo" href="#home" aria-label="Shreya birthday home">
+      <span class="logo-heart">🎂</span> SHREYA<span>.EXE</span> <small class="logo-bday-tag">LVL 19</small>
+    </a>
+
+    <nav class="nav" aria-label="Main navigation">
+      <a href="#home" class="active">HOME</a>
+      <a href="#avatar3d">3D FIGURINE</a>
+      <a href="#vibecheck">VIBE CHECK</a>
+      <a href="#arcade">ARCADE</a>
+      <a href="#vippass">VIP PASS</a>
+      <a href="#cake">CAKE</a>
+      <a href="#final">LETTER</a>
+    </nav>
+
+    <button class="sound-toggle" id="soundToggle" type="button" aria-pressed="true">
+      ♪ ON
+    </button>
+  </header>
+
+  <!-- Preloaded Background Birthday Track (Ishq De Fanniyar MP3) -->
+  <audio id="birthdayAudio" src="assets/happy_birthday.mp3" preload="auto" playsinline></audio>
+
+  <main>
+    <!-- HOME HERO WITH AUTOMATIC ROTATING POSTER CAROUSEL IN BACKGROUND -->
+    <section id="home" class="screen hero-screen">
+      <!-- 3D Rotating Background Poster Carousel (K-Drama & Anime Banners) -->
+      <div class="hero-carousel-bg" aria-hidden="true">
+        <div class="poster-cylinder-stage">
+          <div class="poster-cylinder" id="posterCylinder">
+            <div class="cylinder-card" style="--idx:0">
+              <img src="assets/shreya_anime_banner.jpg" alt="Anime Shreya Katana Warrior" />
+              <div class="card-caption">SHREYA // ANIME WARRIOR</div>
+            </div>
+            <div class="cylinder-card" style="--idx:1">
+              <img src="assets/drama_banner.jpg" alt="K-Drama Classics" />
+              <div class="card-caption">K-DRAMA // CLASSICS</div>
+            </div>
+            <div class="cylinder-card" style="--idx:2">
+              <img src="assets/girlbanner.jpg" alt="Anime Katana Girl" />
+              <div class="card-caption">ANIME // KATANA VIBE</div>
+            </div>
+            <div class="cylinder-card" style="--idx:3">
+              <img src="assets/drama_banner2.jpg" alt="Top K-Dramas" />
+              <div class="card-caption">DRAMA MARATHON // TOP HITS</div>
+            </div>
+            <div class="cylinder-card" style="--idx:4">
+              <img src="assets/Drama_banner3.jpg" alt="Netflix Dramas Collage" />
+              <div class="card-caption">NETFLIX BINGE // ALL ACCESS</div>
+            </div>
+            <div class="cylinder-card" style="--idx:5">
+              <img src="assets/shreya.jpg" alt="Shreya Original" />
+              <div class="card-caption">SHREYA // PLAYER 001</div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-carousel-scrim"></div>
+      </div>
+
+      <!-- Floating Pixel Birthday Party Balloons (Clustered & Multi-sized) -->
+      <div class="birthday-balloon balloon-1 balloon-pink balloon-lg" aria-hidden="true">🎈</div>
+      <div class="birthday-balloon balloon-2 balloon-cyan balloon-sm" aria-hidden="true">🎈</div>
+      <div class="birthday-balloon balloon-3 balloon-purple balloon-md" aria-hidden="true">🎈</div>
+      <div class="birthday-balloon balloon-4 balloon-gold balloon-xs" aria-hidden="true">🎈</div>
+      <div class="birthday-balloon balloon-5 balloon-pink balloon-sm" aria-hidden="true">🎈</div>
+      <div class="birthday-balloon balloon-6 balloon-cyan balloon-lg" aria-hidden="true">🎈</div>
+      <div class="birthday-balloon balloon-7 balloon-purple balloon-sm" aria-hidden="true">🎈</div>
+      <div class="birthday-balloon balloon-8 balloon-gold balloon-md" aria-hidden="true">🎈</div>
+      <div class="birthday-balloon balloon-9 balloon-pink balloon-xs" aria-hidden="true">🎈</div>
+      <div class="birthday-balloon balloon-10 balloon-cyan balloon-sm" aria-hidden="true">🎈</div>
+      <div class="birthday-balloon balloon-11 balloon-purple balloon-xs" aria-hidden="true">🎈</div>
+      <div class="birthday-balloon balloon-12 balloon-gold balloon-sm" aria-hidden="true">🎈</div>
+      <div class="birthday-balloon balloon-13 balloon-pink balloon-xs" aria-hidden="true">🎈</div>
+      <div class="birthday-balloon balloon-14 balloon-cyan balloon-md" aria-hidden="true">🎈</div>
+
+      <div class="birthday-sparkle sparkle-top" aria-hidden="true">✨</div>
+      <div class="birthday-sparkle sparkle-left" aria-hidden="true">✨</div>
+      <div class="birthday-sparkle sparkle-right" aria-hidden="true">✨</div>
+
+      <!-- Foreground Content (100% Readable) -->
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="bday-pill">🎂 HAPPY 19TH BIRTHDAY</span> <i>SPECIAL QUEST EDITION</i></div>
+          <h1 class="hero-bday-title">Happy 19th<br><span>Birthday!</span></h1>
+          <p class="hero-title" id="heroName">SHREYA // PLAYER 001</p>
+          <p class="hero-subtitle">
+            Season 19 of Shreya’s story officially begins today.<br>
+            Featuring plot twists, main-character arcs, late-night gaming,<br>
+            and top-tier aesthetic scenes. Hit start to launch<br>
+            today’s special birthday episode.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button primary" href="#avatar3d" id="enterParty">INSPECT 3D FIGURINE <b>↗</b></a>
+            <button class="button" id="quickWish" type="button">SEND A WISH <b>♥</b></button>
+          </div>
+
+          <div class="hero-meta">
+            <div><span>PLAYER</span><strong>SHREYA</strong></div>
+            <div><span>CLASS</span><strong id="heroStatus">DRAMA & COZY GAMER</strong></div>
+            <div><span>LEVEL</span><strong>19 UNLOCKED</strong></div>
+          </div>
+        </div>
+
+        <div class="hero-console">
+          <div class="console-top">
+            <span>PLAYER // SHREYA</span>
+            <span>HP <b>♥♥♥♥♥</b></span>
+          </div>
+
+          <div class="avatar-hero-frame">
+            <div class="avatar-glow-ring"></div>
+            <img src="assets/shreya.jpg" alt="Shreya Portrait" class="avatar-hero-img" id="heroImgPreview" />
+            <div class="pixel-spark s1">✦</div>
+            <div class="pixel-spark s2">✦</div>
+            <div class="pixel-spark s3">·</div>
+            <div class="pixel-spark s4">♥</div>
+          </div>
+
+          <div class="console-screen">
+            <div class="terminal-line">&gt; BOOTING SHREYA_OS_V19... <span class="term-ok">OK</span></div>
+            <div class="terminal-line">&gt; 3D BLENDER ENGINE: <span class="term-cyan">ONLINE</span></div>
+            <div class="terminal-line">&gt; K-DRAMA & ANIME CAROUSEL: <span class="term-ok">ROTATING</span></div>
+            <div class="terminal-line">&gt; 1-MONTH VIP STREAM PASS: <span class="term-gold">UNLOCKED</span></div>
+            <div class="terminal-line">&gt; CAKE PROTOCOL: <b>ARMED</b></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-hint">SCROLL TO EXPLORE <span>↓</span></div>
+    </section>
+
+    <!-- MISSION CHECKPOINTS -->
+    <section id="mission" class="screen light-screen">
+      <div class="section-heading">
+        <div>
+          <span class="kicker">QUEST LOG</span>
+          <h2>THE LEVEL 19<br><span>ROADMAP</span></h2>
+        </div>
+        <p>Six customized checkpoints built for Shreya. Explore every chamber.</p>
+      </div>
+
+      <div class="mission-grid">
+        <a href="#avatar3d" class="mission-card active-card">
+          <div class="card-top"><span>01</span><em>ONLINE</em></div>
+          <div class="icon-orbit">◈</div>
+          <h3>3D FIGURINE</h3>
+          <p>Custom 1-of-1 sculpted figurine with live tasks & 360° turntable.</p>
+          <span class="card-footer">CHECKPOINT // 01 ↗</span>
+        </a>
+
+        <a href="#vibecheck" class="mission-card">
+          <div class="card-top"><span>02</span><em>READY</em></div>
+          <div class="icon-orbit">♥</div>
+          <h3>VIBE CHECK Q&A</h3>
+          <p>Casual trivia on K-dramas, gaming & cozy choices.</p>
+          <span class="card-footer">CHECKPOINT // 02 ↗</span>
+        </a>
+
+        <a href="#arcade" class="mission-card">
+          <div class="card-top"><span>03</span><em>PLAYABLE</em></div>
+          <div class="icon-orbit">⌁</div>
+          <h3>SPACE DEFENDER</h3>
+          <p>Casual retro mini-game built for fun, zero stress.</p>
+          <span class="card-footer">CHECKPOINT // 03 ↗</span>
+        </a>
+
+        <a href="#vippass" class="mission-card highlight-card">
+          <div class="card-top"><span>04</span><em>GIFT PASS</em></div>
+          <div class="icon-orbit">★</div>
+          <h3>1-MONTH VIP PASS</h3>
+          <p>Unlimited movies, K-dramas & anime streaming gift.</p>
+          <span class="card-footer">CHECKPOINT // 04 ↗</span>
+        </a>
+
+        <a href="#cake" class="mission-card">
+          <div class="card-top"><span>05</span><em>LOCKED</em></div>
+          <div class="icon-orbit">🎂</div>
+          <h3>CAKE ROOM</h3>
+          <p>Hover knife cursor, slice the cake, trigger retro song.</p>
+          <span class="card-footer">CHECKPOINT // 05 ↗</span>
+        </a>
+
+        <a href="#final" class="mission-card">
+          <div class="card-top"><span>06</span><em>LETTER</em></div>
+          <div class="icon-orbit">♛</div>
+          <h3>SPECIAL LETTER</h3>
+          <p>A heartfelt Hinglish message & secret note.</p>
+          <span class="card-footer">CHECKPOINT // 06 ↗</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- 3D COLLECTIBLE FIGURINE STUDIO & INTERACTIVE TASKS -->
+    <section id="avatar3d" class="screen dark-screen hologram-screen">
+      <div class="section-heading dark-heading">
+        <div>
+          <span class="kicker">CHECKPOINT 01 // 3D FIGURINE STUDIO</span>
+          <h2>3D COLLECTIBLE <span>FIGURINE // LEVEL 19</span></h2>
+        </div>
+        <p>Custom 1-of-1 3D Sculpted Figurine of Shreya with illuminated cyber pedestal, studio lighting & interactive tasks!</p>
+      </div>
+
+      <div class="hologram-wrapper">
+        <div class="hologram-viewport-card">
+          <div class="viewport-hud">
+            <span>3D FIGURINE DIORAMA // SHREYA.EXE</span>
+            <span class="hud-status" id="figurineStatus">● TASK: WAVING & GREETING</span>
+          </div>
+
+          <!-- Three.js 3D Figurine Canvas Viewport -->
+          <div id="threeHologramContainer" class="three-container" aria-label="3D Figurine Viewport of Shreya">
+            <div class="viewport-grid-badge">360° ORBIT ACTIVE</div>
+            <!-- Dynamic Figurine Speech Bubble -->
+            <div class="figurine-speech-bubble" id="figurineSpeech">"Level 19 unlocked! Welcome to my 3D Figurine Showcase ✨"</div>
+          </div>
+
+          <!-- Interactive Tasks Bar -->
+          <div class="hologram-controls figurine-actions-grid">
+            <button class="button tiny task-btn active" id="taskWave" type="button" data-task="wave">👋 WAVE & GREET</button>
+            <button class="button tiny task-btn" id="taskCake" type="button" data-task="cake">🎂 CUT 19TH CAKE</button>
+            <button class="button tiny task-btn" id="taskKatana" type="button" data-task="katana">⚔️ KATANA AWAKEN</button>
+            <button class="button tiny task-btn" id="taskZoom" type="button" data-task="portrait">🔍 CLOSE-UP ZOOM</button>
+            <button class="button tiny task-btn" id="taskRotate" type="button">⟳ 360° TURNTABLE: ON</button>
+            <button class="button tiny task-btn" id="taskLight" type="button">💡 LIGHT: CYBER</button>
+            <button class="button tiny task-btn" id="btnReset3D" type="button">↺ RESET CAM</button>
+          </div>
+          <div class="hologram-drag-hint">
+            LEFT DRAG: ORBIT 360° • SCROLL: ZOOM • RIGHT DRAG: PAN • CLICK BUTTONS FOR FIGURINE TASKS
+          </div>
+        </div>
+
+        <div class="character-dossier">
+          <div class="dossier-badge">AUTHENTIC COLLECTIBLE // CERTIFICATE #19-SHREYA</div>
+          <h3>SHREYA</h3>
+          <div class="dossier-level">LEVEL 19 • LIMITED 1-OF-1 3D FIGURINE</div>
+
+          <!-- Interactive Figurine Poses Selector -->
+          <div class="figurine-gallery-box">
+            <div class="art-tag">INTERACTIVE FIGURINE POSES // CLICK TO SWITCH</div>
+            <div class="figurine-thumb-grid">
+              <button class="thumb-card active" data-pose="wave" type="button" title="Casual Gamer & Waving Pose">
+                <img src="assets/shreya_figurine_wave.jpg" alt="Shreya Figurine Waving Pose" />
+                <span>👋 CASUAL WAVE</span>
+              </button>
+              <button class="thumb-card" data-pose="cake" type="button" title="19th Birthday Cake Celebration">
+                <img src="assets/shreya_figurine_cake.jpg" alt="Shreya Figurine Birthday Cake Pose" />
+                <span>🎂 19TH CAKE</span>
+              </button>
+              <button class="thumb-card" data-pose="katana" type="button" title="Anime Katana Warrior Stance">
+                <img src="assets/shreya_figurine_katana.jpg" alt="Shreya Figurine Katana Pose" />
+                <span>⚔️ KATANA STANCE</span>
+              </button>
+              <button class="thumb-card" data-pose="portrait" type="button" title="Sculpt Portrait Detail">
+                <img src="assets/shreya_figurine_portrait.jpg" alt="Shreya Figurine Sculpt Portrait" />
+                <span>✨ SCULPT DETAIL</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="dossier-stats-list">
+            <div class="dossier-stat-item">
+              <div class="stat-icon">⭐</div>
+              <div>
+                <strong>CASUAL VIBES</strong>
+                <p>Relaxed, confident and always in her element. This pose shows her laid-back side with a hint of attitude.</p>
+              </div>
+            </div>
+
+            <div class="dossier-stat-item">
+              <div class="stat-icon">🎧</div>
+              <div>
+                <strong>MUSIC MODE</strong>
+                <p>With headphones on and beats in the air, she's in her happy place. A perfect vibe for chill moments and late nights.</p>
+              </div>
+            </div>
+
+            <div class="dossier-stat-item">
+              <div class="stat-icon">💖</div>
+              <div>
+                <strong>DREAMER SOUL</strong>
+                <p>Eyes on the future, heart full of dreams. This pose represents her passion, hope and never-give-up attitude.</p>
+              </div>
+            </div>
+
+            <div class="dossier-stat-item">
+              <div class="stat-icon">👑</div>
+              <div>
+                <strong>LEGENDARY EDITION</strong>
+                <p>The rarest pose of all. A special look that captures her true essence – bold, unique and one of a kind.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="dossier-quote">
+            <span>"Not just a figurine...<br />it's a part of her story."</span>
+            <span class="dossier-quote-heart">♡</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIBE CHECK & Q&A -->
+    <section id="vibecheck" class="screen vibe-screen">
+      <div class="section-heading">
+        <div>
+          <span class="kicker">CHECKPOINT 02 // CO-OP QUIZ</span>
+          <h2>SHREYA'S <span>VIBE CHECK</span></h2>
+        </div>
+        <p>Pick your favorites below to calibrate the birthday meter and unlock secret boy-approved commentary!</p>
+      </div>
+
+      <div class="vibe-meter-bar">
+        <div class="vibe-meter-info">
+          <span>VIBE SYNCHRONIZATION</span>
+          <strong id="vibeMeterText">0 / 6 COMPLETED</strong>
+        </div>
+        <div class="vibe-progress-track">
+          <div class="vibe-progress-fill" id="vibeProgressFill"></div>
+        </div>
+      </div>
+
+      <div class="vibe-questions-grid" id="vibeGrid">
+        <!-- Q1: FAV K-DRAMA -->
+        <div class="vibe-card" data-qid="1">
+          <div class="vibe-card-head">
+            <span class="vibe-qnum">Q1</span>
+            <h4>WHAT'S YOUR FAV K-DRAMA?</h4>
+          </div>
+          <p class="vibe-prompt">Write down the K-Drama or show that holds a special place in your heart:</p>
+          <div class="vibe-input-wrap">
+            <input type="text" class="vibe-input" id="vibeInput1" data-qid="1" autocomplete="off" placeholder="e.g. Crash Landing on You, Twenty-Five Twenty-One..." />
+            <button class="button tiny vibe-save-btn" data-qid="1" type="button">SAVE ✦</button>
+          </div>
+          <div class="vibe-commentary" id="vibeFeedback1"></div>
+        </div>
+
+        <!-- Q2: FAV SONG -->
+        <div class="vibe-card" data-qid="2">
+          <div class="vibe-card-head">
+            <span class="vibe-qnum">Q2</span>
+            <h4>WHAT'S YOUR FAV SONG?</h4>
+          </div>
+          <p class="vibe-prompt">Write your favorite go-to song or music vibe when headphones are on:</p>
+          <div class="vibe-input-wrap">
+            <input type="text" class="vibe-input" id="vibeInput2" data-qid="2" autocomplete="off" placeholder="e.g. Korean R&B, Anime OSTs, Lo-fi chill tracks..." />
+            <button class="button tiny vibe-save-btn" data-qid="2" type="button">SAVE ✦</button>
+          </div>
+          <div class="vibe-commentary" id="vibeFeedback2"></div>
+        </div>
+
+        <!-- Q3: FAV PLACE TO VISIT NEARBY -->
+        <div class="vibe-card" data-qid="3">
+          <div class="vibe-card-head">
+            <span class="vibe-qnum">Q3</span>
+            <h4>WHAT'S YOUR FAV PLACE TO VISIT NEARBY?</h4>
+          </div>
+          <p class="vibe-prompt">Write your favorite nearby weekend spot or chill hangout location:</p>
+          <div class="vibe-input-wrap">
+            <input type="text" class="vibe-input" id="vibeInput3" data-qid="3" autocomplete="off" placeholder="e.g. Aesthetic cozy café, sunset viewpoint spot..." />
+            <button class="button tiny vibe-save-btn" data-qid="3" type="button">SAVE ✦</button>
+          </div>
+          <div class="vibe-commentary" id="vibeFeedback3"></div>
+        </div>
+
+        <!-- Q4: FAV FOOD -->
+        <div class="vibe-card" data-qid="4">
+          <div class="vibe-card-head">
+            <span class="vibe-qnum">Q4</span>
+            <h4>WHAT'S YOUR FAV FOOD?</h4>
+          </div>
+          <p class="vibe-prompt">Write your ultimate craving when late-night hunger strikes:</p>
+          <div class="vibe-input-wrap">
+            <input type="text" class="vibe-input" id="vibeInput4" data-qid="4" autocomplete="off" placeholder="e.g. Hot Ramen, Korean Fried Chicken, Cheesy Pizza..." />
+            <button class="button tiny vibe-save-btn" data-qid="4" type="button">SAVE ✦</button>
+          </div>
+          <div class="vibe-commentary" id="vibeFeedback4"></div>
+        </div>
+
+        <!-- Q5: INSTANT HAPPINESS -->
+        <div class="vibe-card" data-qid="5">
+          <div class="vibe-card-head">
+            <span class="vibe-qnum">Q5</span>
+            <h4>WHAT MAKES YOU INSTANTLY HAPPY?</h4>
+          </div>
+          <p class="vibe-prompt">Write down that one thing that turns any day into an instant 10/10:</p>
+          <div class="vibe-input-wrap">
+            <input type="text" class="vibe-input" id="vibeInput5" data-qid="5" autocomplete="off" placeholder="e.g. Good food & laughs, bingeing shows under blankets..." />
+            <button class="button tiny vibe-save-btn" data-qid="5" type="button">SAVE ✦</button>
+          </div>
+          <div class="vibe-commentary" id="vibeFeedback5"></div>
+        </div>
+
+        <!-- Q6: ATTRACTION TYPE -->
+        <div class="vibe-card" data-qid="6">
+          <div class="vibe-card-head">
+            <span class="vibe-qnum">Q6</span>
+            <h4>WHAT KIND OF PERSON ARE YOU ATTRACTED TO?</h4>
+          </div>
+          <p class="vibe-prompt">Write what trait or personality in someone naturally attracts you:</p>
+          <div class="vibe-input-wrap">
+            <input type="text" class="vibe-input" id="vibeInput6" data-qid="6" autocomplete="off" placeholder="e.g. Witty, attentive, genuine, respectful & caring..." />
+            <button class="button tiny vibe-save-btn" data-qid="6" type="button">SAVE ✦</button>
+          </div>
+          <div class="vibe-commentary" id="vibeFeedback6"></div>
+        </div>
+      </div>
+
+      <div class="vibe-reward-banner" id="vibeRewardBanner">
+        <span class="badge-vibe">★ 100% VIBE MATCH UNLOCKED ★</span>
+        <h3>CERTIFIED HIGH-TIER COMPATIBILITY</h3>
+        <p>Confirmed: 0% cringe, 100% top-tier taste in entertainment and chill energy.</p>
+      </div>
+    </section>
+
+    <!-- CASUAL ARCADE MINI-GAME -->
+    <section id="arcade" class="screen dark-screen">
+      <div class="section-heading dark-heading">
+        <div>
+          <span class="kicker">CHECKPOINT 03 // CASUAL ARCADE</span>
+          <h2>SPACE <span>DEFENDER</span></h2>
+        </div>
+        <p>Casual arcade mode: move your ship, catch bonus hearts, and beat your personal high score!</p>
+      </div>
+
+      <div class="arcade-shell" id="arcadeShell">
+        <div class="arcade-topbar">
+          <div class="hud-block"><span>SCORE</span><strong id="spaceScore">000000</strong></div>
+          <div class="hud-block"><span>TIME</span><strong id="spaceTime">35</strong></div>
+          <div class="hud-block"><span>COMBO</span><strong id="spaceCombo">x1</strong></div>
+          <div class="hud-block"><span>BEST</span><strong id="spaceBest">000000</strong></div>
+        </div>
+
+        <div class="arcade-screen-wrap">
+          <canvas id="spaceCanvas" width="900" height="560" aria-label="Casual Space Defender mini-game"></canvas>
+
+          <div class="arcade-overlay" id="gameOverlay">
+            <div class="overlay-window">
+              <div class="window-tag">SHREYA ARCADE // RETRO PIXEL</div>
+              <div class="overlay-icon">♥</div>
+              <h3 id="overlayTitle">COZY SPACE DEFENDER</h3>
+              <p id="overlaySubtitle">Blast invaders, catch floating hearts & protect the birthday star!</p>
+              <div class="control-copy">
+                <span><b>MOVE</b> A / D, ← / → or Drag Mouse / Touch Screen</span>
+                <span><b>FIRE</b> Hold SPACE or Click / Hold Screen (Auto-Fire)</span>
+                <span><b>ITEMS</b> Catch ♥ Hearts (+1 Life) & ★ Stars (Triple Laser)</span>
+              </div>
+              <button class="button primary" id="gameStartBtn" type="button">START PLAYING <b>▶</b></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="arcade-touch-bar" id="arcadeTouchBar">
+          <button class="touch-btn" id="touchLeftBtn" type="button" aria-label="Move Ship Left">◀ LEFT</button>
+          <button class="touch-btn fire" id="touchFireBtn" type="button" aria-label="Fire Lasers">⚡ FIRE</button>
+          <button class="touch-btn" id="touchRightBtn" type="button" aria-label="Move Ship Right">RIGHT ▶</button>
+        </div>
+
+        <div class="arcade-controls">
+          <span class="arcade-lives-indicator">PLAYER: SHREYA <b id="spaceLives">♥ ♥ ♥</b></span>
+          <span class="arcade-powerup-indicator" id="spacePowerupTag">BLASTER: NORMAL</span>
+          <button class="button tiny" id="gameResetBtn" type="button">RESTART</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 1-MONTH VIP CINEMA PASS (THE GIFT) -->
+    <section id="vippass" class="screen vip-screen">
+      <div class="section-heading">
+        <div>
+          <span class="kicker">CHECKPOINT 04 // THE GIFT</span>
+          <h2>1-MONTH <span>VIP STREAM</span> PASS</h2>
+        </div>
+        <p>A special birthday pass for Shreya: one month of unlimited movies, K-dramas, and anime streaming on us!</p>
+      </div>
+
+      <div class="ticket-container">
+        <div class="cinema-ticket" id="cinemaTicket">
+          <div class="ticket-left">
+            <div class="ticket-brand">
+              <span class="ticket-brand-badge">VIP STREAMING ACCESS</span>
+              <span class="ticket-edition">19TH BIRTHDAY SPECIAL</span>
+            </div>
+
+            <div class="ticket-main-content">
+              <div class="ticket-title-group">
+                <h3>VIP CINEMA PASS</h3>
+                <p>UNLIMITED STREAMING PASS • ALL ACCESS</p>
+              </div>
+
+              <div class="ticket-details-grid">
+                <div>
+                  <span>PASS HOLDER</span>
+                  <strong>SHREYA</strong>
+                </div>
+                <div>
+                  <span>DURATION</span>
+                  <strong>1 FULL MONTH</strong>
+                </div>
+                <div>
+                  <span>CATALOG</span>
+                  <strong>K-DRAMAS • ANIME • J-DRAMAS</strong>
+                </div>
+                <div>
+                  <span>STATUS</span>
+                  <strong id="ticketStatusText" class="ticket-status-live">READY TO CLAIM</strong>
+                </div>
+              </div>
+
+              <div class="ticket-perks">
+                <span>✓ Ad-Free HD Streaming</span>
+                <span>✓ Unlimited K-Drama & J-Drama Access</span>
+                <span>✓ Co-op Watch Marathons</span>
+              </div>
+            </div>
+
+            <div class="ticket-stub-footer">
+              <span>STREAM APP GIFT // 2026</span>
+              <span>SPECIAL VOUCHER FOR SHREYA</span>
+            </div>
+          </div>
+
+          <div class="ticket-divider">
+            <div class="notch notch-top"></div>
+            <div class="perforated-line"></div>
+            <div class="notch notch-bottom"></div>
+          </div>
+
+          <div class="ticket-right">
+            <div class="stub-tag">VIP VOUCHER</div>
+            <div class="barcode-graphic">||| | |||| | | ||||| || | |||</div>
+            <div class="voucher-box">
+              <span>LOGIN EMAIL</span>
+              <strong id="passEmail">Shreya@SeoulEntertainment.com</strong>
+            </div>
+            <div class="voucher-box">
+              <span>PASSWORD</span>
+              <strong id="passPassword">Shreya123</strong>
+            </div>
+
+            <button class="button primary ticket-btn" id="btnClaimPass" type="button">
+              CLAIM PASS <b>★</b>
+            </button>
+            <div class="ticket-copy-actions" id="copyActionsGroup" style="display:none;">
+              <button class="button tiny copy-btn" id="btnCopyEmail" type="button">COPY ID 📋</button>
+              <button class="button tiny copy-btn" id="btnCopyPass" type="button">COPY PASS 🔑</button>
+            </div>
+            <div class="ticket-download-quick" id="ticketQuickDownload" style="display:none;">
+              <a href="#apkDownloads" class="button accent ticket-download-btn" id="btnScrollToApk">
+                DOWNLOAD APK 📲
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="gift-unlocked-card" id="giftUnlockedCard">
+          <div class="gift-icon">🎉</div>
+          <h4>1-MONTH VIP PASS ACTIVATED!</h4>
+          <p>
+            Your 30-day VIP movie & webseries pass is officially claimed! Here are your VIP login credentials:
+          </p>
+
+          <div class="unlocked-creds-box">
+            <div class="cred-line">
+              <div class="cred-line-header">
+                <span>✉️ LOGIN ID / EMAIL:</span>
+                <button class="mini-copy-btn" id="btnCopyCredEmail" type="button">COPY 📋</button>
+              </div>
+              <strong id="credEmailText">Shreya@SeoulEntertainment.com</strong>
+            </div>
+            <div class="cred-line">
+              <div class="cred-line-header">
+                <span>🔑 PASSWORD:</span>
+                <button class="mini-copy-btn" id="btnCopyCredPass" type="button">COPY 🔑</button>
+              </div>
+              <strong id="credPassText">Shreya123</strong>
+            </div>
+            <div class="cred-line">
+              <div class="cred-line-header">
+                <span>🍿 STREAMING ACCESS:</span>
+              </div>
+              <strong>UNLIMITED K-DRAMAS, ANIME, J-DRAMAS & MOVIES</strong>
+            </div>
+          </div>
+
+          <!-- APK DOWNLOAD LINKS -->
+          <div class="apk-download-section" id="apkDownloads">
+            <div class="apk-header">
+              <span class="apk-badge">OFFICIAL ANDROID APP</span>
+              <h5>📲 STEP 2: DOWNLOAD THE STREAMING APP (APK)</h5>
+              <p class="apk-subtext">
+                Install the Seoul Entertainment APK on your device, log in with the VIP credentials above & start binge-watching!
+              </p>
+            </div>
+
+            <div class="download-btn-grid">
+              <!-- Google Drive Button -->
+              <a href="https://docs.google.com/uc?export=download&id=12OCrnj2XLCo9XkT60yxPLwVqSK1nVz5G"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 class="apk-download-btn gdrive-btn"
+                 id="btnDownloadGDrive">
+                <div class="btn-left">
+                  <div class="btn-icon">📁</div>
+                  <div class="btn-content">
+                    <span class="btn-title">Google Drive</span>
+                    <span class="btn-subtitle">Direct APK Download Link</span>
+                  </div>
+                </div>
+                <div class="btn-action">
+                  <span class="badge-direct">FAST DL</span>
+                  <span class="download-arrow">➔</span>
+                </div>
+              </a>
+
+              <!-- MEGA Drive Button -->
+              <a href="https://mega.nz/file/PigGVQrR#6eS-ebDcqhcxCVrEyILWgmHqXihSAfK8uc40pCcIaBI"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 class="apk-download-btn mega-btn"
+                 id="btnDownloadMega">
+                <div class="btn-left">
+                  <div class="btn-icon">☁️</div>
+                  <div class="btn-content">
+                    <span class="btn-title">MEGA Drive</span>
+                    <span class="btn-subtitle">Fast Cloud Mirror Link</span>
+                  </div>
+                </div>
+                <div class="btn-action">
+                  <span class="badge-mirror">MIRROR</span>
+                  <span class="download-arrow">➔</span>
+                </div>
+              </a>
+
+              <!-- Telegram Channel Button -->
+              <a href="https://t.me/Seoul_Entertainment_DKD/696"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 class="apk-download-btn telegram-btn"
+                 id="btnDownloadTelegram">
+                <div class="btn-left">
+                  <div class="btn-icon">✈️</div>
+                  <div class="btn-content">
+                    <span class="btn-title">Telegram Channel</span>
+                    <span class="btn-subtitle">Channel Post & Instant APK</span>
+                  </div>
+                </div>
+                <div class="btn-action">
+                  <span class="badge-telegram">CHANNEL</span>
+                  <span class="download-arrow">➔</span>
+                </div>
+              </a>
+            </div>
+
+            <div class="apk-footer-tip">
+              <span>💡 Pro Tip: If Google Drive shows "Download quota exceeded", please use the MEGA or Telegram link!</span>
+            </div>
+          </div>
+
+          <p class="sub-note">
+            Get your favorite snacks ready and enjoy uninterrupted binge sessions. Happy Birthday, Shreya! 🎬✨
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CAKE ROOM -->
+    <section id="cake" class="screen cake-screen">
+      <div class="section-heading">
+        <div>
+          <span class="kicker">CHECKPOINT 05 // FINAL RITUAL</span>
+          <h2>THE <span>CAKE</span> ROOM</h2>
+        </div>
+        <p>Move your cursor over the cake. The knife is waiting for you to make the first slice.</p>
+      </div>
+
+      <div class="cake-room">
+        <div class="cake-copy">
+          <div class="room-status">
+            <span class="status-led"></span>
+            <b id="cakeState">CAKE MODULE // STANDBY</b>
+          </div>
+          <h3>BLOW CANDLES.<br><span>SLICE CAKE.</span><br>PARTY SONG.</h3>
+          <p id="cakeMessage">
+            The ultimate 19th Birthday Ceremony: Blow out your candles, slice the 3-tier birthday cake, and unlock the special birthday soundtrack!
+          </p>
+
+          <!-- Interactive Make a Wish Ritual -->
+          <div class="cake-wish-area" id="cakeWishArea">
+            <button type="button" class="button primary wish-trigger-btn" id="makeWishBtn">
+              ✨ MAKE A WISH ✨
+            </button>
+
+            <!-- Wish Input Card (Opens when Make a Wish is clicked) -->
+            <div class="wish-card" id="wishCard" style="display: none;">
+              <div class="wish-card-header">
+                <span class="wish-icon">🌟</span>
+                <b>MAKE A BIRTHDAY WISH</b>
+              </div>
+              <p class="wish-instruction">Write a secret wish for your 19th year below:</p>
+              <textarea id="wishInput" class="wish-input" placeholder="write a wish..." rows="3"></textarea>
+              <button type="button" class="button primary wish-save-btn" id="saveWishBtn">
+                💾 SAVE WISH
+              </button>
+              <div class="wish-status" id="wishStatus"></div>
+            </div>
+
+            <!-- Blow Candles Button (Revealed after Wish is saved) -->
+            <button type="button" class="button primary blow-candles-btn" id="blowCandlesBtn" style="display: none;">
+              🕯️ BLOW CANDLES
+            </button>
+          </div>
+        </div>
+
+        <div class="cake-stage" id="cakeStage" tabindex="0" aria-label="Interactive Birthday Cake for Shreya.">
+          <div class="cake-room-grid"></div>
+          <div class="cake-light"></div>
+          <div class="cake-spotlight-rays" aria-hidden="true"></div>
+
+          <!-- High-Fidelity Interactive Birthday Cake Canvas -->
+          <div class="cake-canvas-wrapper" id="cakeCanvasWrapper">
+            <canvas id="cakeCanvas" width="720" height="540"></canvas>
+          </div>
+
+          <!-- Unlocked Reward Banner -->
+          <div class="cake-reward" id="cakeReward">
+            <span>UNLOCKED</span>
+            <b>HAPPY 19TH BIRTHDAY SHREYA ♥</b>
+            <small>SPECIAL BIRTHDAY TRACK PLAYING</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Retro Cyber Wish Popup Modal -->
+      <div class="wish-modal-overlay" id="wishModal" style="display: none;" role="dialog" aria-modal="true">
+        <div class="wish-modal-card">
+          <div class="wish-modal-header">
+            <span class="modal-star">✨</span>
+            <h3>BLESSING UNLOCKED</h3>
+            <span class="modal-star">✨</span>
+          </div>
+          <div class="wish-modal-body">
+            <div class="blessing-icon">🔮</div>
+            <p class="blessing-text">"Apki wish jarur puri hogi tatast huuuu"</p>
+            <div class="blessing-sparkles">💖 ✨ 🎂 ✨ 💖</div>
+          </div>
+          <button type="button" class="button primary wish-modal-close" id="closeWishModalBtn">
+            TATASTU 🙏
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL FINALE & HINGLISH LETTER -->
+    <section id="final" class="screen final-screen">
+      <div class="final-card">
+        <div class="final-badge">CHECKPOINT 06 // MISSION CLEAR</div>
+        <div class="trophy">♛</div>
+        <span class="kicker">LEVEL 19 CLEAR</span>
+        <h2>HAPPY BIRTHDAY<br><span>SHREYA</span></h2>
+        
+        <!-- Thoughtful Hinglish Letter -->
+        <div class="letter-box">
+          <div class="letter-header">
+            <span class="letter-tag">ENCRYPTED MESSAGE // DECRYPTED FOR SHREYA</span>
+            <span class="letter-date">LEVEL 19 • SPECIAL EDITION</span>
+          </div>
+          <div class="letter-body">
+            <p class="greeting">Happy 19th Birthday, Shreya! 🤍✨</p>
+            <p>
+              Just wanted to give a quick note to wish you a gentle, peaceful, and really nice day ahead. Hope this year brings you lots of quiet comfort, good health, and moments that make you smile.
+            </p>
+            <p>
+              Waise toh abhi zyada time nahi hua hume baat karte hue, par honest opinion... short time mein hi conversations kaafi sorted aur acchi rahi hain. Looking forward to more random chats, banter, and getting to know you better.
+            </p>
+            <p>
+              Mini gift alert: EK month ka movie app subscription reserved hai for your binge-watching sessions whenever you feel like relaxing—baaki your top Japanese aur Korean recommendations are always welcome!
+            </p>
+            <p class="sign-off">
+              Take care of yourself, enjoy the day at your own pace, and hope you have a really sweet year ahead. ✨🍿🎂
+            </p>
+          </div>
+        </div>
+
+        <div class="secret-lock" id="secretBox">
+          <span>BONUS UNLOCKABLE // SECRET NOTE</span>
+          <b id="secretMessage">LOCKED</b>
+          <button class="button tiny" id="secretBtn" type="button">UNLOCK NOTE ♥</button>
+        </div>
+
+        <div class="final-actions">
+          <a href="#home" class="button primary">REPLAY QUEST <b>↻</b></a>
+          <button class="button" id="finalWish" type="button">SEND ONE MORE WISH <b>✦</b></button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>FOR SHREYA // LEVEL 19 EDITION</span>
+    <span>MADE OF PIXELS, K-DRAMAS & GOOD VIBES</span>
+    <span>PLAYER 001</span>
+  </footer>
+
+  <div id="confetti" aria-hidden="true"></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

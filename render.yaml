@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: birthday-retro-pixel-site
+    runtime: docker
+    plan: free
+    region: oregon
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        sync: false
+      - key: DB_NAME
+        value: company
+      - key: COLLECTION_NAME
+        value: love
