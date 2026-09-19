@@ -139,14 +139,7 @@ function primeBirthdayAudio() {
   const audio = $("birthdayAudio");
   if (audio) {
     audio.volume = 0.85;
-    audio.play().then(() => {
-      if (!cakeCut) {
-        audio.pause();
-        audio.currentTime = 0;
-      }
-    }).catch(e => {
-      console.log("[Audio Priming] Browser autoplay policy primed:", e);
-    });
+    try { audio.load(); } catch (e) {}
   }
 }
 document.addEventListener("click", primeBirthdayAudio, { once: true });
@@ -2414,6 +2407,7 @@ function playBirthdaySong() {
   birthdayAudioObj = audio;
 
   try {
+    audio.loop = true;
     audio.volume = 0.85; // Mid to High volume (85%)
     const playPromise = audio.play();
     if (playPromise !== undefined) {
